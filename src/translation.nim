@@ -1,6 +1,5 @@
 import httpclient, json, strformat, uri, pylib
 
-
 proc tinyslation*(text: string, to: string, frm: string="en", fallback_value: string=""): string =
     ## Text string translation from free online crowdsourced API.
     assert frm != to and len(text) > 2 and len(frm) == 2 and len(to) == 2
