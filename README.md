@@ -19,7 +19,7 @@ Tinyslation a tiny translation. Nim package.
 # Install
 
 ```
-nimble install tinyslation
+nimble install translation
 ```
 
 
