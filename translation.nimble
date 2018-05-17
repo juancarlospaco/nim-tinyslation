@@ -9,5 +9,5 @@ bin           = @["translation.nim"]
 
 # Dependencies
 
-requires "nim >= 0.18.1"
+requires "nim >= 0.18.0"
 requires "pylib"
