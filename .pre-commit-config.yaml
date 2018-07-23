@@ -1,9 +1,0 @@
--   repo:  https://github.com/juancarlospaco/nim-pre-commit
-    sha: master
-    minimum_pre_commit_version: 1.8.2
-    verbose: true
-    log_file: nim-pre-commit.log
-    description: Nim programming language Pre-Commit Hook Lints all your *.nim files.
-    stages: [commit, push]
-    hooks:
-    -   id: nim
