@@ -5,6 +5,8 @@ Tinyslation a tiny translation. Nim package.
 
 ![screenshot](https://source.unsplash.com/Oxl_KBNqxGA/800x402 "Illustrative Photo by https://unsplash.com/@foxfox")
 
+![screenshot](temp.png "Tinyslation working as standalone App.")
+
 
 # Use
 
