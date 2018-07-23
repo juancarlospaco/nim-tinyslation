@@ -1,4 +1,4 @@
-import asyncdispatch, httpclient, json, strformat, uri
+import asyncdispatch, httpclient, json, strformat, uri, parseopt, terminal, random
 
 const base_url =
   when defined(ssl): "https://mymemory.translated.net/api/get?q="  ## SSL.
@@ -20,8 +20,27 @@ proc tinyslation*(this: MMT | AsyncMMT, text: string, to: string, frm="en", time
 
 
 when is_main_module:
-  echo MMT().tinyslation("white cat", to="es")
+  var
+    tox, frm: string
+  for tipoDeClave, clave, valor in getopt():
+    case tipoDeClave
+    of cmdShortOption, cmdLongOption:
+      case clave
+      of "version":             quit("0.1.0", 0)
+      of "license", "licencia": quit("GPLv3", 0)
+      of "help", "ayuda":       quit("translation --to=es --from=en --color --debug 'white cat'", 0)
+      of "to",   "hacia":       tox = valor
+      of "from", "desde":       frm = valor
+      of "debug":               echo(fmt"Translate from {frm} to {tox}.")
+      of "color":
+        randomize()
+        setBackgroundColor(bgBlack)
+        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].rand)
+    of cmdArgument:
+      echo MMT().tinyslation(clave, to=tox, frm=frm)
+    of cmdEnd: assert false
 
-  proc async_translation {.async.} = echo await AsyncMMT().tinyslation("white cat", to="es")
 
-  wait_for async_translation()
+#   proc async_translation {.async.} = echo await AsyncMMT().tinyslation("white cat", to="es")
+#
+#   wait_for async_translation()
