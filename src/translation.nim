@@ -8,7 +8,7 @@ type
   AsyncMMT* = AsyncHttpClient  ## Async Client for translations.
 
 
-proc tinyslation*(this: MMT | AsyncMMT, text: string, to: string, frm="en", timeout: int8= 9): Future[string] {.multisync.} =
+proc tinyslation*(this: MMT | AsyncMMT, text, to: string, frm="en", timeout: int8= 9): Future[string] {.multisync.} =
   ## Text string translation from free online crowdsourced API. Sync and Async.
   assert frm != to and len(text) > 2 and len(frm) == 2 and len(to) == 2, "Tinyslation Wrong Arguments."
   let
@@ -26,7 +26,7 @@ when is_main_module:
     case tipoDeClave
     of cmdShortOption, cmdLongOption:
       case clave
-      of "version":             quit("0.1.0", 0)
+      of "version":             quit("0.2.0", 0)
       of "license", "licencia": quit("GPLv3", 0)
       of "help", "ayuda":       quit("translation --to=es --from=en --color --debug 'white cat'", 0)
       of "to",   "hacia":       tox = valor
