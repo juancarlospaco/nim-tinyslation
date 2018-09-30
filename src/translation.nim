@@ -41,6 +41,7 @@ when is_main_module:
     of cmdEnd: assert false
 
 
-#   proc async_translation {.async.} = echo await AsyncMMT().tinyslation("white cat", to="es")
-#
-#   wait_for async_translation()
+runnableExamples:
+  import asyncdispatch, httpclient, json, strformat, uri, parseopt, terminal, random
+  proc async_translation {.async.} = echo await AsyncMMT().tinyslation("white cat", to="es")
+  wait_for async_translation()
