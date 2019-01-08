@@ -1,11 +1,11 @@
 # Package
 
-version       = "0.3.0"
+version       = "0.3.1"
 author        = "Juan Carlos <juancarlospaco@gmail.com>"
 description   = "Text string translation from free online crowdsourced API. Tinyslation a tiny translation. Sync and Async support (MultiSync). No API Key required."
 license       = "LGPLv3"
 srcDir        = "src"
-bin           = @["translation.nim"]
+bin           = @["translation"]
 
 # Dependencies
 
