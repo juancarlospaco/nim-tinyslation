@@ -35,7 +35,7 @@ when is_main_module:
       of "color":
         randomize()
         setBackgroundColor(bgBlack)
-        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].rand)
+        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].sample)
     of cmdArgument:
       echo MMT().tinyslation(clave, to=tox, frm=frm)
     of cmdEnd: assert false
